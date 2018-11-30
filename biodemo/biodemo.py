@@ -66,8 +66,7 @@ def parse_args():
         '--maxlen',
         metavar='N',
         type=int,
-        default=DEFAULT_MAX_LEN,
-        help='Maximum length sequence to include in stats (default = None)')
+        help = 'Maximum length sequence to include in stats (default = None)')
     parser.add_argument('--version',
                         action='version',
                         version='%(prog)s ' + PROGRAM_VERSION)
@@ -121,7 +120,7 @@ class FastaStats(object):
                 self.num_seqs, self.num_bases, self.min_len, self.max_len,
                 self.average)
 
-    def from_file(self, fasta_file, minlen_threshold=DEFAULT_MIN_LEN, maxlen_threshold=DEFAULT_MAX_LEN):
+    def from_file(self, fasta_file, minlen_threshold=DEFAULT_MIN_LEN, maxlen_threshold=None):
         '''Compute a FastaStats object from an input FASTA file.
 
         Arguments:
@@ -137,7 +136,7 @@ class FastaStats(object):
         min_len = max_len = None
         for seq in SeqIO.parse(fasta_file, "fasta"):
             this_len = len(seq)
-            if (this_len >= minlen_threshold) & (maxlen_threshold is None or this_len <= maxlen_threshold):
+            if (this_len >= minlen_threshold) and (maxlen_threshold is None or this_len <= maxlen_threshold):
                 if num_seqs == 0:
                     min_len = max_len = this_len
                 else:

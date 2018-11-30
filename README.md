@@ -1,5 +1,5 @@
 [![travis](https://travis-ci.org/YKankanige/biodemo.svg?branch=master)](https://travis-ci.org/YKankanige/biodemo)
-[![codecov](https://travis-ci.org/YKankanige/biodemo.svg?branch=master)](https://travis-ci.org/YKankanige/biodemo)
+[![codecov](https://codecov.io/github/YKankanige/biodemo/branch/master/graphs/badge.svg)](https://codecov.io/github/YKankanige/biodemo)
 
 # Overview 
 
